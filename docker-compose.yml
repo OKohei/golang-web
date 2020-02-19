@@ -9,3 +9,8 @@ services:
         command: sh -c "cd app && bee run"
         volumes:
             - ./app:/go/src/github.com/app
+        links:
+            - redis
+    redis:
+        image: redis
+        container_name: redis
